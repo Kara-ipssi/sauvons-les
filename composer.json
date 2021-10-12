@@ -1,0 +1,15 @@
+{
+    "name": "karamoko/sauvons-les",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "Resources\\": "resources/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Karamoko Coulibaly",
+            "email": "k.coulibaly@ecole-ipssi.net"
+        }
+    ]
+}
