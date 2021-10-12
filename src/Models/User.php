@@ -4,12 +4,34 @@ namespace App\Models;
 
 class User
 {
+    /**
+     * l'id créée automatiquement lors de l'insertion dans la base de données
+     */
     private int    $id;
+    /**
+     * nom de l'utilisateur
+     */
     private string $name;
+
+    /**
+     * L'adresse email de l'utilisateur
+     */
     private string $email;
-    private string $password;
-    private string $comfirmPassword;
-    private bool   $isAdmin;
+
+    /**
+     * mot de passe de l'utilisateur
+     */
+    private string $mdp;
+
+    /**
+     * Confirmation du mot  de passe
+     */
+    private string $comfirmMdp = "";
+
+    /**
+     * Défini si un utilisateur est admin(1 ou true) ou non(0 ou false) 
+     */
+    private int    $isAdmin;
 
     /**
      * Get the value of name
@@ -24,7 +46,7 @@ class User
      *
      * @return  self
      */ 
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->name = $name;
 
@@ -44,52 +66,14 @@ class User
      *
      * @return  self
      */ 
-    public function setEmail($email)
+    public function setEmail(string $email)
     {
         $this->email = $email;
 
         return $this;
     }
 
-    /**
-     * Get the value of password
-     */ 
-    public function getPassword()
-    {
-        return $this->password;
-    }
 
-    /**
-     * Set the value of password
-     *
-     * @return  self
-     */ 
-    public function setPassword($password)
-    {
-        $this->password = $password;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of comfirmPassword
-     */ 
-    public function getComfirmPassword()
-    {
-        return $this->comfirmPassword;
-    }
-
-    /**
-     * Set the value of comfirmPassword
-     *
-     * @return  self
-     */ 
-    public function setComfirmPassword($comfirmPassword)
-    {
-        $this->comfirmPassword = $comfirmPassword;
-
-        return $this;
-    }
 
     /**
      * Get the value of id
@@ -104,7 +88,7 @@ class User
      *
      * @return  self
      */ 
-    public function setId($id)
+    public function setId(int $id)
     {
         $this->id = $id;
 
@@ -124,9 +108,49 @@ class User
      *
      * @return  self
      */ 
-    public function setIsAdmin($isAdmin)
+    public function setIsAdmin(int $isAdmin)
     {
         $this->isAdmin = $isAdmin;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of mdp
+     */ 
+    public function getMdp()
+    {
+        return $this->mdp;
+    }
+
+    /**
+     * Set the value of mdp
+     *
+     * @return  self
+     */ 
+    public function setMdp(string $mdp)
+    {
+        $this->mdp = $mdp;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of comfirmMdp
+     */ 
+    public function getComfirmMdp()
+    {
+        return $this->comfirmMdp;
+    }
+
+    /**
+     * Set the value of comfirmMdp
+     *
+     * @return  self
+     */ 
+    public function setComfirmMdp(string $comfirmMdp)
+    {
+        $this->comfirmMdp = $comfirmMdp;
 
         return $this;
     }

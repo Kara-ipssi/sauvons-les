@@ -11,5 +11,11 @@
             "name": "Karamoko Coulibaly",
             "email": "k.coulibaly@ecole-ipssi.net"
         }
-    ]
+    ],
+    "require": {
+        "symfony/routing": "^5.3",
+        "symfony/http-foundation": "^5.3",
+        "bramus/router": "^1.6",
+        "illuminate/routing": "^8.64"
+    }
 }

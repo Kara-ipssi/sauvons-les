@@ -1,15 +1,25 @@
 <?php
 
+session_start();
+require_once __DIR__.'../../vendor/autoload.php';
+// require __DIR__.'../../resources/routes/web.php';
+
 use App\Managers\AnimalManager;
 use App\Managers\UserManager;
-use App\Models\Animal;
 
-require_once __DIR__.'../../vendor/autoload.php';
+$userManager = new UserManager();
+$users = $userManager->findAll();
 
-echo 'Hello';
+var_dump($users);
 
-$manager = new AnimalManager();
+// Liste de animaux
 
-$animal = new Animal();
-$animal->setNom("test");
-var_dump($manager->add($animal));
+$animaux = (new AnimalManager)->findAll();
+var_dump($animaux);
+// Obtenir un animal via son id
+// $animal = (new AnimalManager)->findOne(1);
+
+
+
+
+

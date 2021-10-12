@@ -2,18 +2,16 @@
 
 namespace App\Managers;
 
-use App\Models\Animal;
+// use App\Models\Animal;
 
+/**
+ * Défini les méthode à initialiser lorsqu'on implement cette class
+ */
 interface ManagerInterface
 {
-
     public function findAll();
 
     public function findOne(int $id);
-
-    // public abstract function findFirst();
-    
-    // public abstract function findLast();
 
     // public function add(Animal $animal);
 

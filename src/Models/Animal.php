@@ -13,11 +13,19 @@ Class Animal
     private string $image;
     private bool $isDisponible;
     private string $description;
-    private DateTime $date_ajout;
+    private string $date_ajout;
 
-    public function __construct()
+    /**
+     * Constructeur qui ajout les attribus par defaut
+     */
+    public function __construct(string $nom = "", int $age = 0, float $poids = 0)
     {
-        // $this->date_ajout = new DateTime();
+        $this->date_ajout = (new DateTime())->format('Y-m-d H:i:s');
+        $this->nom = $nom;
+        $this->age = $age;
+        $this->poids = $poids;
+        $this->image = "https://i.pinimg.com/550x/1c/48/4f/1c484fd8da81d0b03fc1c583ec423373.jpg";
+        $this->description="";
         $this->isDisponible = true;
     }
 
@@ -174,10 +182,21 @@ Class Animal
      *
      * @return  self
      */ 
-    // public function setDate_ajout($date_ajout)
-    // {
-    //     $this->date_ajout = $date_ajout;
+    public function setDate_ajout(string $date_ajout)
+    {
+        $this->date_ajout = $date_ajout;
 
-    //     return $this;
-    // }
+        return $this;
+    }
+
+    public function hydrate(array $animals)
+    {
+        foreach ($animals as $key => $value) {
+            $method = "set" . ucfirst($key);
+
+            if (method_exists($this, $method)) {
+                $this->$method($value);
+            }
+        }
+    }
 }

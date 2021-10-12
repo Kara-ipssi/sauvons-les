@@ -40,7 +40,7 @@ class Migration
                 id              INT AUTO_INCREMENT,
                 email_contact   VARCHAR(100) NOT NULL,
                 message         TEXT NOT NULL,
-                tel             VARCHAR(25)  NULL,
+                tel             VARCHAR(25) NULL,
                 PRIMARY         KEY(id)
             );';
     }
